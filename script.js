@@ -24,7 +24,7 @@ class Group{
                 let pow = GetPower(k, this.modulo);
                 this.elems.push(new GroupMember(k, pow));
 				
-				console.log(JSON.stringify(new GroupMember(k, pow)));
+				//console.log(JSON.stringify(new GroupMember(k, pow)));
             }
 		   console.log("GCD for "+k+" is  "+GCD(k, this.modulo));
 		}
@@ -55,11 +55,11 @@ class Group{
 //Helper functions for determining the table's view
 
 var FitTable=function(group){
-	console.log("FitTable called");
+	//console.log("FitTable called");
 	if(table.style.visibility == "hidden") return;	
 	console.log(currentFormat+" vs. "+GetFormat());
 	
-	if(currentFormat!=GetFormat()) 
+	//if(currentFormat!=GetFormat()) 
 	{
 		console.log("Re-fitting the table...")
 		FormTable(group);
@@ -159,26 +159,40 @@ function FormTable(){
 }
 
 function HorisontalTable(){
-	//сначала элементы потом ордеры потом инверсы
 	let elems=group.elems;
-	let j=elems.length;
+	//let columns = 20;
+	let columns=Math.ceil((window.innerWidth/2-140)/50);
+	let rows=Math.ceil(elems.length/(columns-1));
+	console.log("cols="+columns+", rows="+rows);
 
-	var tr = table.insertRow();
-	tr.insertCell().innerHTML="Element";
-	for (var i = 0; i < j; i++) {
-    tr.insertCell().innerHTML=elems[i].elem;
+	let i;
+	//столько раз сколько есть rows надо вывести строку с элементами 
+	//потом с ордерами и потом с инверсами
+	for(i=0; i<rows; ++i){
+		var tr = table.insertRow();
+		tr.insertCell().innerHTML="Element";
+		let j;
+		for(j=0; j<columns-1&&(i*(columns-1)+j)<elems.length;++j){
+		console.log("cols="+columns+", rows="+rows+", result="+(i*(columns-1)+j));
+		tr.insertCell().innerHTML=elems[i*(columns-1)+j].elem;
+		}
+		var tr = table.insertRow();
+		tr.insertCell().innerHTML="Order";
+		
+		for(j=0; j<columns-1&&(i*(columns-1)+j)<elems.length;++j){
+		tr.insertCell().innerHTML=elems[i*(columns-1)+j].power;
+		}
+		var tr = table.insertRow();
+		tr.insertCell().innerHTML="Inverse";
+		
+		for(j=0; j<columns-1&&(i*(columns-1)+j)<elems.length;++j){
+		tr.insertCell().innerHTML=elems[i*(columns-1)+j].inverse;
+		}
+		
+		if(i!=rows-1) {
+			tr=table.insertRow();
+			}
 	}
-	tr = table.insertRow();
-	tr.insertCell().innerHTML="Order";
-	for (var i = 0; i < j; i++) {
-    tr.insertCell().innerHTML=elems[i].power;
-	}
-	tr = table.insertRow();
-	tr.insertCell().innerHTML="Inverse";
-	for (var i = 0; i < j; i++) {
-    tr.insertCell().innerHTML=elems[i].inverse;
-	}
-  
 }
 
 function VerticalTable(){

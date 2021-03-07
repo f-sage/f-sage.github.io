@@ -31,6 +31,12 @@ table, th, td {
 		background: #b8c1f3;
 	}
 
+#table tr:nth-child(4n) {
+  border: 1px solid black;
+  height:12px;
+}
+	
+
 .button {
 	background-color:#6f7cbf;
 	border-radius:5px;
