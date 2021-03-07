@@ -1,3 +1,5 @@
+//======================================//
+//Classes
 class GroupMember {
   constructor(elem, power) {
     this.elem = elem;
@@ -49,31 +51,55 @@ class Group{
 		
 }
 
+//======================================//
+//Helper functions for determining the table's view
+
+var FitTable=function(group){
+	console.log("FitTable called");
+	if(table.style.visibility == "hidden") return;	
+	console.log(currentFormat+" vs. "+GetFormat());
+	
+	if(currentFormat!=GetFormat()) 
+	{
+		console.log("Re-fitting the table...")
+		FormTable(group);
+	}
+}
+
+function GetFormat(){
+	if(window.innerWidth<=600) return "vertical";
+	else return "horisontal";
+}
+
+//================================//
+//Initial
+
 let button = document.querySelector('button');
 var input = document.getElementById("input");
 var table = document.getElementById('table');
+var currentFormat=GetFormat();
+
+window.addEventListener('resize', FitTable);
 
 table.style.visibility = "hidden";
 
 
-var group;
-
-
 button.onclick = function() {
   if(input.value=="") return;
-  var group=new Group(input.value);
-  FormTable(group);
+  group=new Group(input.value);
+  FormTable();
 };
 
 input.addEventListener("keyup", function(event) {
   // Number 13 is the "Enter" key on the keyboard
   if (event.keyCode === 13) {
-    // Trigger the button element with a click
+  // Trigger the button element with a click
     button.onclick();
   }
 });
 
-
+//======================================//
+//Calculating functions for group 
 function GCD (x, y){
 	while(y) {
     var t = y;
@@ -82,7 +108,6 @@ function GCD (x, y){
   }
   return x;
 }
-
 
 var fastModularExponentiation = function(a, b, n) {
   a = a % n;
@@ -121,10 +146,20 @@ function AssignInverse(item, maxPower, modulo){
 				fastModularExponentiation(item.elem, maxPow, modulo);	
 		}
 
-function FormTable(group){
+//===============================================//
+//Table drawing functions
+
+function FormTable(){
 	table.style.visibility = "initial";
 	table.innerHTML='';
-//сначала элементы потом ордеры потом инверсы
+	
+	currentFormat=GetFormat();
+	if(currentFormat=="vertical") VerticalTable(group);
+	else HorisontalTable(group);
+}
+
+function HorisontalTable(){
+	//сначала элементы потом ордеры потом инверсы
 	let elems=group.elems;
 	let j=elems.length;
 
@@ -144,8 +179,25 @@ function FormTable(group){
     tr.insertCell().innerHTML=elems[i].inverse;
 	}
   
-  t
-
 }
+
+function VerticalTable(){
+	let elems=group.elems;
+	let j=elems.length;
+	//элемент ордер инверс и так для всех
+	var tr = table.insertRow();
+	tr.insertCell().innerHTML="Element";
+	tr.insertCell().innerHTML="Order";
+	tr.insertCell().innerHTML="Inverse";
+	for (var i = 0; i < j; i++) {
+	tr = table.insertRow();
+    tr.insertCell().innerHTML=elems[i].elem;
+    tr.insertCell().innerHTML=elems[i].power;
+    tr.insertCell().innerHTML=elems[i].inverse;
+	}
+}
+//========================//
+
+
 
 
