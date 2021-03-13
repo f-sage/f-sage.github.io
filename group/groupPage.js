@@ -11,7 +11,7 @@ table.style.visibility = "hidden";
 
 
 button.onclick = function() {
-  if(input.value==="") return;
+  if(input.value===""||input.value<2) return;
   group=new Group(input.value);
   FormTable();
 };
