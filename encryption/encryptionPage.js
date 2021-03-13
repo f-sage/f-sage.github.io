@@ -100,4 +100,6 @@ function FormGroup(){
     groupList.innerHTML=res;
 }
 
+function FitGroupTable(){
 
+}
