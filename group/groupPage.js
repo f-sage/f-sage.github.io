@@ -54,7 +54,9 @@ function FormTable(){
 	table.innerHTML='';
 	
 	currentFormat=GetFormat();
-	if(currentFormat==="vertical") VerticalTable(group);
+	if(currentFormat==="vertical") {
+		VerticalTable(group);
+	}
 	else HorizontalTable(group);
 }
 

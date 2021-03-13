@@ -53,6 +53,10 @@ input{
     border-color: #f0edf8;
 }
 
+#group{
+    margin-bottom: 32px;
+    width:60%;
+}
 #group tr{
     background: #b8d1f3;
 }
