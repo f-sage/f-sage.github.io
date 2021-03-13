@@ -3,24 +3,26 @@
 const button = document.querySelector('button');
 const input = document.getElementById("input");
 const table = document.getElementById('table');
+const listTable=document.getElementById("group");
 let currentFormat=GetFormat();
 
 window.addEventListener('resize', FitTable);
 
 table.style.visibility = "hidden";
-
+listTable.style.visibility="hidden";
 
 button.onclick = function() {
   if(input.value===""||input.value<2) return;
   group=new Group(input.value);
+  FormList();
   FormTable();
 };
 
 input.addEventListener("keyup", function(event) {
   // Number 13 is the "Enter" key on the keyboard
-  if (event.key == 13) {
+  if (event.keyCode == 13) {
   // Trigger the button element with a click
-    button.onclick();
+    button.onclick(undefined);
   }
 });
 
@@ -110,5 +112,12 @@ function VerticalTable(){
 }
 //endregion
 
+function FormList(){
+	listTable.style.visibility="initial";
+	listTable.innerHTML="";
 
+	let res="G<sup>*</sup><sub>"+group.elems.length+"</sub>=";
+	res+=group.ToString();
 
+	listTable.insertRow().insertCell().innerHTML=res;
+}
