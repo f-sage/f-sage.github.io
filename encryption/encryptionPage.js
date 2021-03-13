@@ -3,11 +3,11 @@ const input = document.getElementById("input");
 const functionsTable = document.getElementById('functionsTable');
 const keyPairsTable = document.getElementById("keyPairsTable");
 const groupList = document.getElementById("groupList");
-const keyPairsLabel=document.getElementById("keyPairsLabel");
+const groupTable= document.getElementById("group");
 
 functionsTable.style.visibility="hidden";
 keyPairsTable.style.visibility="hidden";
-keyPairsLabel.style.visibility="hidden";
+groupTable.style.visibility="hidden";
 let group;
 let encryptionModule;
 
@@ -48,9 +48,12 @@ function FormFunctionsTable(){
 }
 
 function FormKeyPairsTable(){
-    keyPairsLabel.style.visibility="initial";
     keyPairsTable.style.visibility = "initial";
     keyPairsTable.innerHTML="";
+
+    let head=keyPairsTable.createCaption();
+    head.innerHTML="Possible key pairs:"
+
     //если инверс равен элементу не добавлять
     //если инверс есть в элементах - тоже не добавлять
     let elems=[];
@@ -88,6 +91,7 @@ function FormKeyPairsTable(){
 }
 
 function FormGroup(){
+    groupTable.style.visibility="initial";
     let res="G<sup>*</sup><sub>"+group.elems.length+"</sub>=";
 
     res+="{";
@@ -100,6 +104,6 @@ function FormGroup(){
     groupList.innerHTML=res;
 }
 
-function FitGroupTable(){
+function FitKeyPairsTable(){
 
 }

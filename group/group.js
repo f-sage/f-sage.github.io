@@ -58,7 +58,7 @@ class Group{
 
     AssignInverse(item){
         let maxPow=this.maxPower-1;
-        console.log("elem="+item.elem+", maxPower="+this.maxPower+", modulo="+this.modulo);
+       // console.log("elem="+item.elem+", maxPower="+this.maxPower+", modulo="+this.modulo);
         item.inverse =
             fastModularExponentiation(item.elem, maxPow, this.modulo);
     }

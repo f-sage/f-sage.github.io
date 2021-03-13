@@ -22,11 +22,16 @@ body {
 #group{
     width:50%;
     margin-left:25%;
+    margin-top: 12px;
+    margin-bottom: 12px;
     font-size: 28px;
     font-family:'Arial',sans-serif;
-    color:#fffdf5;
-}
+    color:#B52B40;
 
+}
+#group tr{
+    background: #ffedd1;
+}
 
 input{
     color: #484157;
@@ -48,9 +53,13 @@ input{
 .table tr:nth-child(3n+2){
     background: #fcdaa4;
 }
-#table tr:nth-child(3n) {
+.table tr:nth-child(3n) {
     border: 1px solid black;
     height:12px;
+}
+
+#keyPairsTable{
+    margin-top: 24px;
 }
 
 .button {
@@ -63,5 +72,5 @@ input{
 }
 
 .coloured {
-    color:#B52B40;
+    color:#f26500;
 }
