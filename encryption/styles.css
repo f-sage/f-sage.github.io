@@ -19,6 +19,12 @@ body {
     justify-content: center;
 }
 
+#keyPairsHead{
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    color:#B52B40;
+}
+
 #group{
     width:50%;
     margin-left:25%;
@@ -56,6 +62,7 @@ input{
 .table tr:nth-child(3n) {
     border: 1px solid black;
     height:12px;
+    background:#fcbe5b;
 }
 
 #keyPairsTable{
