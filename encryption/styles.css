@@ -1,0 +1,60 @@
+body {
+    background-color: #FBD8B0;
+    font-size: 28px;
+    font-family:'Arial',sans-serif;
+    color: #f07948;
+}
+
+#inputDiv{
+    text-align: center;
+    justify-content: center;
+}
+
+.label{
+    text-align: center;
+}
+
+#group, #keyPairs{
+    text-align: center;
+    justify-content: center;
+}
+
+#group{
+    width:50%;
+    margin-left:25%;
+}
+
+
+input{
+    color: #484157;
+    background: #f0edf8;
+    font-size: 28px;
+    border-color: #f0edf8;
+}
+
+.table {
+    color:#B52B40;
+    border: #d9d1eb;
+    background: #f8f4ed;
+}
+
+.table tr:nth-child(odd){
+    background: #FACB80;
+}
+
+.table tr:nth-child(even){
+    background: #fcdaa4;
+}
+
+.button {
+    background-color: #f07948;
+    color:#ffffff;
+    text-shadow: #664a28;
+}
+.button:hover {
+    background-color:#cc683f;
+}
+
+.coloured {
+    color:#283966;
+}

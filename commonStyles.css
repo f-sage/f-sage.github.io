@@ -1,0 +1,53 @@
+.label, #input, .button {
+    font-size: 28px;
+    font-family:'Arial',sans-serif;
+}
+
+#head{
+    text-align: center;
+}
+
+input{
+    display:inline-block;
+    width: 150px;
+    margin-top:10px;
+    margin-left:10px;
+    height: 50px;
+    text-align: center;
+    border-radius:2px;
+    padding: 3px;
+}
+
+.label{
+    display:inline-block;
+    margin-top: 10px;
+}
+
+.table {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    border-radius: 10px;
+    border: 1px solid;
+    padding: 10px;
+    font-size:25px;
+    font-family:'Arial',sans-serif;
+}
+
+table, th, td {
+    height:50px;
+    padding:10px;
+}
+
+.button {
+    border-radius:5px;
+    display:inline-block;
+    cursor:pointer;
+    padding:13px 25px;
+    text-decoration:none;
+}
+
+.button:active {
+    position:relative;
+    top:1px;
+}
