@@ -51,3 +51,9 @@ table, th, td {
     position:relative;
     top:1px;
 }
+
+#inputDiv{
+    width:600px;
+    margin: auto;
+    text-align: center;
+}
