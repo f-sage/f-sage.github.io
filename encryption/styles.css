@@ -5,23 +5,17 @@ body {
 
 #inputDiv{
     text-align: center;
-    justify-content: center;
-
 }
 
 .label{
-    text-align: center;
     color:#fffdf5;
 }
 
-#group, #keyPairs{
+#keyPairs{
     text-align: center;
-    justify-content: center;
 }
 
 #keyPairsHead{
-    font-family: 'Arial', sans-serif;
-    font-size: 28px;
     color:#B52B40;
 }
 
@@ -30,8 +24,6 @@ body {
     margin-left:25%;
     margin-top: 12px;
     margin-bottom: 12px;
-    font-size: 28px;
-    font-family:'Arial',sans-serif;
     color:#B52B40;
 
 }
@@ -42,7 +34,6 @@ body {
 input{
     color: #484157;
     background: #f0edf8;
-    font-size: 28px;
     border-color: #f0edf8;
 }
 
