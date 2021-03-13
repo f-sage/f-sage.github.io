@@ -71,7 +71,7 @@ function HorizontalTable(){
 		tr.insertCell().innerHTML="Element";
 		let j;
 		for(j=0; j<columns-1&&(i*(columns-1)+j)<elems.length;++j){
-		console.log("cols="+columns+", rows="+rows+", result="+(i*(columns-1)+j));
+		//console.log("cols="+columns+", rows="+rows+", result="+(i*(columns-1)+j));
 		tr.insertCell().innerHTML=elems[i*(columns-1)+j].elem;
 		}
 		tr = table.insertRow();

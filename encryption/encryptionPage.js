@@ -64,17 +64,27 @@ function FormKeyPairsTable(){
         }
     }
 
-    let row=keyPairsTable.insertRow();
-    row.insertCell().innerHTML="e";
-    for(let i=0;i<elems.length;++i){
-        row.insertCell().innerHTML=elems[i];
+    let columns=Math.ceil((window.innerWidth/2-140)/50);
+    let rows=Math.ceil(elems.length/(columns-1));
+    console.log("cols="+columns+", rows="+rows);
+
+    for(let i=0; i<rows;++i){
+        let tr=keyPairsTable.insertRow();
+        tr.insertCell().innerHTML="e";
+        for(let j=0; j<columns-1&&(i*(columns-1)+j)<elems.length;++j){
+            tr.insertCell().innerHTML=elems[i*(columns-1)+j];
+        }
+
+        tr=keyPairsTable.insertRow();
+        tr.insertCell().innerHTML="d";
+        for(let j=0; j<columns-1&&(i*(columns-1)+j)<elems.length;++j){
+            tr.insertCell().innerHTML=inverseElems[i*(columns-1)+j];
+        }
+        if(i!==rows-1) {
+            tr=keyPairsTable.insertRow();
+        }
     }
 
-    row=keyPairsTable.insertRow();
-    row.insertCell().innerHTML="d";
-    for(let i=0;i<elems.length;++i){
-        row.insertCell().innerHTML=inverseElems[i];
-    }
 }
 
 function FormGroup(){

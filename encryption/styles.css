@@ -38,12 +38,16 @@ input{
     background: #f8f4ed;
 }
 
-.table tr:nth-child(odd){
+.table tr:nth-child(3n+1){
     background: #FACB80;
 }
 
-.table tr:nth-child(even){
+.table tr:nth-child(3n+2){
     background: #fcdaa4;
+}
+#table tr:nth-child(3n) {
+    border: 1px solid black;
+    height:12px;
 }
 
 .button {
