@@ -38,6 +38,7 @@ function  FitTable(group){
 	{
 		console.log("Re-fitting the table...")
 		FormTable(group);
+		FormList();
 	}
 }
 
@@ -58,6 +59,7 @@ function FormTable(){
 		VerticalTable(group);
 	}
 	else HorizontalTable(group);
+
 }
 
 function HorizontalTable(){
@@ -117,6 +119,9 @@ function VerticalTable(){
 function FormList(){
 	listTable.style.visibility="initial";
 	listTable.innerHTML="";
+
+	if(GetFormat()==="vertical") listTable.style.width="70%";
+	else listTable.style.width="";
 
 	let res="G<sup>*</sup><sub>"+group.elems.length+"</sub>=";
 	res+=group.ToString();
