@@ -72,3 +72,20 @@ input{
 .coloured {
     color:#f26500;
 }
+
+/*
+adding parts from commonStyles
+ */
+
+.button {
+    border-radius:5px;
+    display:inline-block;
+    cursor:pointer;
+    padding:13px 25px;
+    text-decoration:none;
+}
+
+.button:active {
+    position:relative;
+    top:1px;
+}
