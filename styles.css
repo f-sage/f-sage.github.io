@@ -1,9 +1,12 @@
 body{
     background-color: #d6f7c3;
+
+    background-image: url(tea.png); /* Путь к фоновому рисунку */
+    background-repeat: repeat; /* Повторяем фон по горизонтали */
 }
 .button{
     width:100%;
-    background-color: #abcca3;
+    background-color: #a9cc72;
     color: #ffffff;
     border:1px solid #1f7828;
     margin: auto;
@@ -25,3 +28,11 @@ tbody{
 #groupPageBtn, #encryptionPageBtn{
     width:100%;
 }
+
+img{
+    position: absolute;
+    z-index:-5;
+    bottom: 0px;
+    opacity: 0.2;
+}
+
