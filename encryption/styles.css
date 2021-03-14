@@ -5,6 +5,7 @@ body {
 
 #inputDiv{
     text-align: center;
+    display:inline-block;
 }
 
 .label{
@@ -76,7 +77,7 @@ input{
 
 @media screen and (max-width: 600px){
 
-    input, .label, button, table{
+    #inputDiv, table{
         width:100%;
     }
 
