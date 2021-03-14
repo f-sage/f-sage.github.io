@@ -75,11 +75,3 @@ input{
 }
 
 
-@media screen and (max-width: 1200px){
-
-    #inputDiv, table{
-        width:100%;
-    }
-
-
-}
