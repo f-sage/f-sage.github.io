@@ -80,7 +80,7 @@ input{
     #group{
         width:auto;
     }
-    #functions{
+    #functions tr td{
 
         font-size: 1vw;
     }
