@@ -73,26 +73,10 @@ input{
     color:#f26500;
 }
 
-/*
-adding parts from commonStyles
- */
-
-.button {
-    border-radius:5px;
-    display:inline-block;
-    cursor:pointer;
-    padding:13px 25px;
-    text-decoration:none;
-}
-
-.button:active {
-    position:relative;
-    top:1px;
-}
 
 @media screen and (max-width: 600px){
 
-    #inputDiv{
+    input, .label, button, table{
         width:100%;
     }
 
