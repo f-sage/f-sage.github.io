@@ -74,6 +74,13 @@ input{
     color:#f26500;
 }
 
+img{
+    position: absolute;
+    z-index:-5;
+    right: 0px;
+    bottom: 0px;
+   opacity: 0.2;
+}
 
 @media screen and (max-width: 600px){
 
