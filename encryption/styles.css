@@ -75,3 +75,11 @@ input{
 }
 
 
+@media screen and (max-width: 600px){
+    #group{
+        width:auto;
+    }
+    #functionsTable{
+        font-size: 25px;
+    }
+}
