@@ -78,10 +78,11 @@ input{
 @media screen and (max-width: 600px){
 
     #group{
-        width:auto;
+        width: 100%;
+        margin-left:0;
     }
-    #functions tr td{
 
-        font-size: 1vw;
+    #functions tr td{
+        font-size: 25px;
     }
 }
