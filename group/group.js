@@ -128,6 +128,14 @@ function EulerPhi(number){
     return result;
 }
 
+function BruteforcePhi(number){
+    let count = 1;
+    for(let i=2; i<number;++i){
+        if(GCD(i, number)===1) ++count;
+    }
+    return count;
+}
+
 function EulerL(number){
     let primes=GetPrimeFactors(number);
     let res=1;
@@ -135,7 +143,6 @@ function EulerL(number){
     for(let i=0;i<primes.length;++i){
         res*=(--primes[i]);
     }
-
     res/=ArrayGCD(primes);
 
     return res;
